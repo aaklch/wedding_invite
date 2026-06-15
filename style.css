@@ -199,50 +199,48 @@ body {
 }
 
 .calendar-label {
-    font-size: 16px;
-    letter-spacing: 5px;
-    color: #bbb49e;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #b89a3e;
     margin-bottom: 20px;
     font-weight: 500;
-    font-style: italic;
 }
 
 .weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     margin-bottom: 12px;
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: 1px;
     color: #5a5a5a;
-    font-weight: 500;
-    font-style: italic;
+    font-weight: 400;
 }
 
 .calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 8px 0;
-    font-size: 16px;
+    font-size: 15px;
     color: #1e1e1e;
     font-weight: 400;
-    font-style: italic;
 }
 
 .calendar-day {
-    padding: 6px 0;
+    padding: 8px 0;
     text-align: center;
     position: relative;
+    font-family: 'Playfair Display', 'Cormorant Garamond', monospace;
 }
 
 .calendar-day.empty {
     color: #8a8a8a;
 }
 
+/* ДЕНЬ СВАДЬБЫ — универсальное сердечко */
 .calendar-day.wedding-day {
-    color: #bbb49e;
+    color: #b89a3e;
     font-weight: 600;
     position: relative;
-    z-index: 1;
 }
 
 .calendar-day.wedding-day::before {
@@ -251,12 +249,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 32px;
+    font-size: 28px;
     color: rgba(184, 154, 62, 0.25);
+    font-family: 'Segoe UI', 'Arial', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
     z-index: -1;
     pointer-events: none;
+    /* Фиксированные размеры для всех устройств */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 /* === РАЗДЕЛИТЕЛИ === */
 .vertical-line {
     width: 1px;
