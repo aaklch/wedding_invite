@@ -118,7 +118,6 @@ function startCountdown() {
 function showInvitation(guest) {
     const app = document.getElementById('app');
     const savedRSVP = getRSVP(guest.id);
-    const plusOneText = guest.plusOne ? 'Будем рады видеть вас с парой';
     const calendarHtml = generateCalendar();
 
     app.innerHTML = `
