@@ -483,16 +483,6 @@ body {
     font-style: italic;
 }
 
-.details-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #1e1e1e;
-    margin-bottom: 15px;
-    letter-spacing: 3px;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-}
-
 .details-text {
     font-size: 15px;
     line-height: 1.7;
