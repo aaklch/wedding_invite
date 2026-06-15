@@ -19,7 +19,7 @@ body {
 .heart-divider,
 .heart-icon,
 .couple-names .and,
-.calendar-day.wedding-day::before {
+.calendar-day.wedding-day::after {
     font-family: 'Segoe UI', 'Arial', 'Apple Color Emoji', 'Noto Color Emoji', 'Helvetica Neue', sans-serif !important;
     font-weight: normal;
 }
@@ -245,7 +245,7 @@ body {
     color: #8a8a8a;
 }
 
-/* ДЕНЬ СВАДЬБЫ — универсальное сердечко */
+/* ДЕНЬ СВАДЬБЫ — CSS-сердечко (одинаково на всех устройствах) */
 .calendar-day.wedding-day {
     color: #bbb49e;
     font-weight: 600;
@@ -253,21 +253,28 @@ body {
 }
 
 .calendar-day.wedding-day::before {
-    content: "❤";
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
-    color: rgba(187, 180, 158, 0.25);
-    font-family: 'Segoe UI', 'Arial', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    width: 32px;
+    height: 32px;
+    background: rgba(187, 180, 158, 0.2);
+    border-radius: 50%;
     z-index: -1;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.calendar-day.wedding-day::after {
+    content: "♥";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #bbb49e;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
+    z-index: 1;
 }
 
 /* === РАЗДЕЛИТЕЛИ === */
@@ -480,16 +487,6 @@ body {
     color: #bbb49e;
     margin-bottom: 15px;
     font-weight: 500;
-    font-style: italic;
-}
-
-.details-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #1e1e1e;
-    margin-bottom: 15px;
-    letter-spacing: 3px;
-    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
 }
 
