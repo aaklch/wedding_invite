@@ -1,0 +1,730 @@
+/* === ПОДКЛЮЧЕНИЕ ШРИФТОВ === */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+    overflow-x: hidden;
+    background: #2c2418;
+}
+
+/* === ВИДЕО ФОН === */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.video-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.overlay {
+    display: none;
+}
+
+/* === ОСНОВНОЙ КОНТЕНТ === */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}
+
+/* === ПЕРВЫЙ ЭКРАН === */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    transition: all 0.5s ease-out;
+}
+
+.names-wrapper {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.names-wrapper.slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wedding-tag {
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: #5a5a5a;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.couple-names span {
+    display: block;
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    color: #1e1e1e;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.couple-names .and {
+    font-size: 40px;
+    font-weight: 500;
+    color: #bbb49e;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.date {
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #2a2a2a;
+    margin: 25px 0 40px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 12px;
+    letter-spacing: 4px;
+    animation: bounce 2s infinite;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.scroll-down .arrow {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* === ПРИГЛАШЕНИЕ === */
+.invitation-wrapper {
+    min-height: 100vh;
+    padding: 30px 20px 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.invitation-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* === ТЕКСТ ПРИГЛАШЕНИЯ === */
+.invitation-text {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.invitation-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 25px;
+    letter-spacing: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.invitation-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #2a2a2a;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* === КАЛЕНДАРЬ === */
+.calendar-section {
+    text-align: center;
+    padding: 30px 0 20px;
+}
+
+.calendar-label {
+    font-size: 16px;
+    letter-spacing: 5px;
+    color: #bbb49e;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 12px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #5a5a5a;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px 0;
+    font-size: 16px;
+    color: #1e1e1e;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.calendar-day {
+    padding: 6px 0;
+    text-align: center;
+    position: relative;
+}
+
+.calendar-day.empty {
+    color: #8a8a8a;
+}
+
+.calendar-day.wedding-day {
+    color: #bbb49e;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.calendar-day.wedding-day::before {
+    content: "❤";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: rgba(184, 154, 62, 0.25);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* === РАЗДЕЛИТЕЛИ === */
+.vertical-line {
+    width: 1px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+}
+
+.heart-divider {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 18px;
+    color: #bbb49e;
+    letter-spacing: 6px;
+}
+
+/* === МЕСТО ПРОВЕДЕНИЯ === */
+.venue-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.venue-label {
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #bbb49e;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.venue-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.venue-address {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #3a3a3a;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+/* === КНОПКА КАРТЫ === */
+.venue-map-btn {
+    display: inline-block;
+    background: #1e1e1e;
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-style: italic;
+}
+
+.venue-map-btn:hover {
+    background: #3a3a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.venue-map-btn:active {
+    transform: translateY(0);
+}
+
+/* === ПЛАН ДНЯ (TIMING) === */
+.timing-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.timing-label {
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #bbb49e;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.timing-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.timing-item {
+    margin-bottom: 20px;
+}
+
+.timing-time {
+    font-size: 18px;
+    font-weight: 600;
+    color: #bbb49e;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.timing-event {
+    font-size: 15px;
+    color: #3a3a3a;
+    margin-top: 4px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.timing-location {
+    font-size: 12px;
+    color: #8a8a8a;
+    margin-top: 4px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* === DRESS CODE === */
+.dresscode-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dresscode-label {
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: #bbb49e;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.dresscode-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.dresscode-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.dresscode-colors {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.color-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.color-1 { background: #ddcbb0; }
+.color-2 { background: #cbb9a4; }
+.color-3 { background: #96a480; }
+.color-4 { background: #bcc2ac; }
+.color-5 { background: #ffdcde; }
+.color-6 { background: #f5e6d3; }
+.color-7 { background: #d4c4a8; }
+.color-8 { background: #5e4029; }
+.color-9 { background: #8b7355; }
+
+.color-label {
+    font-size: 11px;
+    color: #4a4a4a;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+/* === ДЕТАЛИ (no flowers) === */
+.details-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.details-label {
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #bbb49e;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.details-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.details-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #3a3a3a;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* === RSVP === */
+.rsvp-section {
+    text-align: center;
+    padding: 30px 0 20px;
+}
+
+.rsvp-section h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.rsvp-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 32px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.3);
+    color: #1e1e1e;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.btn-yes {
+    background: rgba(184, 154, 62, 0.15);
+    border-color: #bbb49e;
+    color: #bbb49e;
+}
+
+.btn-yes:hover {
+    background: rgba(184, 154, 62, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-no {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-no:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.rsvp-message {
+    padding: 12px;
+    font-size: 14px;
+    display: none;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.rsvp-message.success {
+    color: #bbb49e;
+    display: block;
+}
+
+/* === ФУТЕР === */
+.footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: #6a6a6a;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* === СЧЕТЧИК ДО СВАДЬБЫ === */
+.countdown-section {
+    text-align: center;
+    padding: 40px 20px 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 10px;
+}
+
+.countdown-label {
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: #bbb49e;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-block {
+    text-align: center;
+    min-width: 70px;
+}
+
+.countdown-number {
+    font-size: 40px;
+    font-weight: 600;
+    color: #1e1e1e;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+.countdown-unit {
+    font-size: 11px;
+    color: #8a8a8a;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 480px) {
+    .couple-names span {
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+    
+    .couple-names .and {
+        font-size: 30px;
+    }
+    
+    .date {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+    
+    .invitation-text h2 {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+    
+    .invitation-text p {
+        font-size: 15px;
+    }
+    
+    .calendar-days {
+        font-size: 14px;
+    }
+    
+    .calendar-label {
+        font-size: 14px;
+    }
+    
+    .venue-name {
+        font-size: 24px;
+    }
+    
+    .venue-address {
+        font-size: 13px;
+    }
+    
+    .timing-time {
+        font-size: 16px;
+    }
+    
+    .timing-event {
+        font-size: 14px;
+    }
+    
+    .timing-label {
+        font-size: 13px;
+    }
+    
+    .timing-title {
+        font-size: 20px;
+    }
+    
+    .details-text {
+        font-size: 14px;
+    }
+    
+    .dresscode-text {
+        font-size: 14px;
+    }
+    
+    .dresscode-colors {
+        gap: 12px;
+    }
+    
+    .color-dot {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .rsvp-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        font-size: 14px;
+    }
+    
+    .venue-map-btn {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+    
+    .countdown-number {
+        font-size: 32px;
+    }
+    
+    .countdown-label {
+        font-size: 13px;
+    }
+    
+    .countdown-timer {
+        gap: 12px;
+    }
+    
+    .countdown-block {
+        min-width: 55px;
+    }
+    
+    .countdown-unit {
+        font-size: 9px;
+    }
+}
