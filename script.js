@@ -149,7 +149,7 @@ function showInvitation(guest) {
                 </a>
             </div>
             
-            <div class="heart-divider">❤</div>
+            <div class="heart-divider">♥</div>
             
             <div class="timing-section">
                 <div class="timing-label">ПЛАН ДНЯ</div>
@@ -177,7 +177,7 @@ function showInvitation(guest) {
                 </div>
             </div>
             
-            <div class="heart-divider">❤</div>
+            <div class="heart-divider">♥</div>
             
             <div class="dresscode-section">
                 <div class="dresscode-label">DRESS CODE</div>
@@ -196,7 +196,7 @@ function showInvitation(guest) {
                 </div>
             </div>
             
-            <div class="heart-divider">❤</div>
+            <div class="heart-divider">♥</div>
 
 <div class="details-section">
     <div class="details-label">ДЕТАЛИ</div>
@@ -211,7 +211,7 @@ function showInvitation(guest) {
 </div>
 
             
-            <div class="heart-divider">❤</div>
+            <div class="heart-divider">♥</div>
             
             <div class="rsvp-section">
                 <h3>Подтвердите присутствие ${guest.fullName}</h3>
