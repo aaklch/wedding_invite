@@ -121,7 +121,7 @@ function showInvitation(guest) {
     app.innerHTML = `
         <div class="invitation-card">
             <div class="invitation-text">
-                <h2>ДОРОГИЕ ${guest.fullName}!</h2>
+                <h2>${guest.fullName}!</h2>
                 <p>Этот день станет для нас поистине незабываемым, и мы мечтаем провести его рядом с Вами.</p>
                 <p style="margin-top: 15px;">Приглашаем Вас присоединиться к нашей свадьбе и украсить ее своим присутствием!</p>
             </div>
