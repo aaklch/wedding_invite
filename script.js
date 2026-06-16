@@ -34,16 +34,14 @@ function getRSVP(guestId) {
 }
 
 // === ОТПРАВКА В GOOGLE SHEETS ===
-// ВАШ УНИКАЛЬНЫЙ URL (ГОТОВ)
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPdvLlK9spdDX2UU-8gxM6uwDZjaMefxh-x4smufORPwbS0-H5feERWHbIhyKpB2GZ/exec';
 
-async function sendToGoogleSheets(guestName, guestId, response, plusOne) {
+async function sendToGoogleSheets(guestName, guestId, response) {
     try {
         const formData = new URLSearchParams();
         formData.append('guestName', guestName);
         formData.append('guestId', guestId);
         formData.append('response', response);
-        formData.append('plusOne', plusOne);
         formData.append('timestamp', new Date().toLocaleString('ru-RU'));
         
         await fetch(GOOGLE_SCRIPT_URL, {
@@ -118,7 +116,6 @@ function startCountdown() {
 function showInvitation(guest) {
     const app = document.getElementById('app');
     const savedRSVP = getRSVP(guest.id);
-    const plusOneText = guest.plusOne ? 'Будем рады видеть вас с парой' : 'Ждем только вас';
     const calendarHtml = generateCalendar();
 
     app.innerHTML = `
@@ -198,18 +195,17 @@ function showInvitation(guest) {
             
             <div class="heart-divider">♥</div>
 
-<div class="details-section">
-    <div class="details-label">ДЕТАЛИ</div>
-    <div class="details-text">
-        Просим не обременять себя<br>
-        выбором цветов. Ваше присутствие<br>
-        скрасит этот день ярче любых букетов!<br><br>
-        Если вы хотите порадовать нас,<br>
-        лучшим подарком станет
-        бутылочка вашего любимого вина</br> 
-    </div>
-</div>
-
+            <div class="details-section">
+                <div class="details-label">ДЕТАЛИ</div>
+                <div class="details-text">
+                    Просим не обременять себя<br>
+                    выбором цветов. Ваше присутствие<br>
+                    скрасит этот день ярче любых букетов!<br><br>
+                    Если вы хотите порадовать нас,<br>
+                    лучшим подарком станет
+                    бутылочка вашего любимого вина
+                </div>
+            </div>
             
             <div class="heart-divider">♥</div>
             
@@ -220,7 +216,6 @@ function showInvitation(guest) {
                     <button class="btn btn-no" onclick="handleRSVP('no', '${guest.id}')">Не смогу</button>
                 </div>
                 <div id="rsvpMessage" class="rsvp-message"></div>
-                <div style="margin-top: 20px; font-size: 12px; color: #6a6a6a;">${plusOneText} </div>
             </div>
             
             <!-- СЧЕТЧИК ДО СВАДЬБЫ -->
@@ -266,21 +261,17 @@ function showInvitation(guest) {
 }
 
 window.handleRSVP = function(response, guestId) {
-    // Сохраняем в localStorage
     saveRSVP(guestId, response);
     
-    // Находим данные гостя
     const guest = findGuest(guestId);
     if (guest) {
-        // Отправляем в Google Sheets
-        sendToGoogleSheets(guest.fullName, guestId, response, guest.plusOne);
+        sendToGoogleSheets(guest.fullName, guestId, response);
     }
     
-    // Показываем сообщение на странице
     const msg = document.getElementById('rsvpMessage');
     if (msg) {
         msg.className = 'rsvp-message success';
-        msg.innerHTML = response === 'yes' ? 'Спасибо! Ждем вас с нетерпением!' : ' Спасибо за ответ! Будем скучать!';
+        msg.innerHTML = response === 'yes' ? 'Спасибо! Ждем вас с нетерпением!' : 'Спасибо за ответ! Будем скучать!';
     }
     document.querySelectorAll('.rsvp-buttons button').forEach(btn => btn.disabled = true);
 };
