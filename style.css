@@ -731,3 +731,31 @@ body {
         font-size: 9px;
     }
 }
+/* === УНИВЕРСАЛЬНОЕ ЗОЛОТОЕ СЕРДЕЧКО === */
+.golden-heart {
+    display: inline-block;
+    position: relative;
+    color: #bbb49e;
+    font-size: 18px;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
+    line-height: 1;
+}
+
+/* Для сердечка между именами */
+.couple-names .and {
+    display: inline-block;
+    font-size: 46px;
+    color: #bbb49e;
+    margin: 10px 0;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+/* Для разделителей между блоками */
+.heart-divider {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 20px;
+    color: #bbb49e;
+    letter-spacing: 6px;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
+}
