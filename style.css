@@ -19,7 +19,7 @@ body {
 .heart-divider,
 .couple-names .and {
     font-family: 'Arial', 'Helvetica Neue', 'Segoe UI', sans-serif !important;
-    color: #bbb49e !important;
+    color: #a8946b !important;
     font-weight: normal !important;
 }
 
@@ -98,7 +98,7 @@ body {
 .wedding-tag {
     font-size: 14px;
     letter-spacing: 6px;
-    color: #5a5a5a;
+    color: #a8946b;
     margin-bottom: 30px;
     font-weight: 400;
     font-style: italic;
@@ -115,12 +115,12 @@ body {
 }
 
 .couple-names .and {
-    font-size: 38px;  /* ← размер как в календаре */
+    font-size: 38px;
     font-weight: 500;
-    color: #bbb49e;
+    color: #a8946b;
     margin: 10px 0;
     font-style: normal;
-    opacity: 0.6;  /* ← прозрачность как в календаре */
+    opacity: 0.6;
     display: inline-block;
 }
 
@@ -211,7 +211,7 @@ body {
 .calendar-label {
     font-size: 16px;
     letter-spacing: 5px;
-    color: #bbb49e;
+    color: #a8946b;
     margin-bottom: 20px;
     font-weight: 500;
     font-style: italic;
@@ -223,7 +223,7 @@ body {
     margin-bottom: 12px;
     font-size: 13px;
     letter-spacing: 1px;
-    color: #5a5a5a;
+    color: #a8946b;
     font-weight: 500;
     font-style: italic;
 }
@@ -250,7 +250,7 @@ body {
 
 /* ДЕНЬ СВАДЬБЫ — SVG-сердечко с цифрой внутри */
 .calendar-day.wedding-day {
-    color: #bbb49e;
+    color: #a8946b;
     font-weight: 700;
     position: relative;
     z-index: 1;
@@ -264,7 +264,7 @@ body {
     transform: translate(-50%, -50%);
     width: 38px;
     height: 38px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23bbb49e" opacity="0.6"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a8946b" opacity="0.6"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
     background-size: contain;
     z-index: -1;
     pointer-events: none;
@@ -281,10 +281,10 @@ body {
 .heart-divider {
     text-align: center;
     margin: 25px 0;
-    font-size: 38px;  /* ← размер как в календаре */
-    color: #bbb49e;
+    font-size: 38px;
+    color: #a8946b;
     letter-spacing: 6px;
-    opacity: 0.6;  /* ← прозрачность как в календаре */
+    opacity: 0.6;
     font-family: 'Arial', 'Helvetica Neue', 'Segoe UI', sans-serif !important;
     font-weight: normal !important;
 }
@@ -298,7 +298,7 @@ body {
 .venue-label {
     font-size: 14px;
     letter-spacing: 5px;
-    color: #bbb49e;
+    color: #a8946b;
     margin-bottom: 15px;
     font-weight: 500;
     font-style: italic;
@@ -360,7 +360,7 @@ body {
 .timing-label {
     font-size: 14px;
     letter-spacing: 5px;
-    color: #bbb49e;
+    color: #a8946b;
     margin-bottom: 15px;
     font-weight: 500;
     font-style: italic;
@@ -383,7 +383,7 @@ body {
 .timing-time {
     font-size: 18px;
     font-weight: 600;
-    color: #bbb49e;
+    color: #a8946b;
     letter-spacing: 2px;
     font-style: italic;
 }
@@ -413,7 +413,7 @@ body {
 .dresscode-label {
     font-size: 14px;
     letter-spacing: 6px;
-    color: #bbb49e;
+    color: #a8946b;
     margin-bottom: 15px;
     font-weight: 500;
     font-style: italic;
@@ -480,7 +480,7 @@ body {
 .details-label {
     font-size: 14px;
     letter-spacing: 5px;
-    color: #bbb49e;
+    color: #a8946b;
     margin-bottom: 15px;
     font-weight: 500;
     font-style: italic;
@@ -544,13 +544,13 @@ body {
 }
 
 .btn-yes {
-    background: rgba(184, 154, 62, 0.15);
-    border-color: #bbb49e;
-    color: #bbb49e;
+    background: rgba(168, 148, 107, 0.15);
+    border-color: #a8946b;
+    color: #a8946b;
 }
 
 .btn-yes:hover {
-    background: rgba(184, 154, 62, 0.3);
+    background: rgba(168, 148, 107, 0.3);
     transform: translateY(-2px);
 }
 
@@ -572,7 +572,7 @@ body {
 }
 
 .rsvp-message.success {
-    color: #bbb49e;
+    color: #a8946b;
     display: block;
 }
 
@@ -598,7 +598,7 @@ body {
 .countdown-label {
     font-size: 15px;
     letter-spacing: 4px;
-    color: #bbb49e;
+    color: #a8946b;
     margin-bottom: 20px;
     font-weight: 500;
     font-style: italic;
