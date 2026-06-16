@@ -15,6 +15,14 @@ body {
     background: #2c2418;
 }
 
+/* === УНИВЕРСАЛЬНЫЙ СТИЛЬ ДЛЯ ВСЕХ СЕРДЕЧЕК === */
+.heart-divider,
+.couple-names .and {
+    font-family: 'Arial', 'Helvetica Neue', 'Segoe UI', sans-serif !important;
+    color: #bbb49e !important;
+    font-weight: normal !important;
+}
+
 /* === ВИДЕО ФОН === */
 .video-background {
     position: fixed;
@@ -107,11 +115,13 @@ body {
 }
 
 .couple-names .and {
-    font-size: 40px;
+    font-size: 38px;  /* ← размер как в календаре */
     font-weight: 500;
     color: #bbb49e;
     margin: 10px 0;
-    font-style: italic;
+    font-style: normal;
+    opacity: 0.6;  /* ← прозрачность как в календаре */
+    display: inline-block;
 }
 
 .date {
@@ -271,9 +281,12 @@ body {
 .heart-divider {
     text-align: center;
     margin: 25px 0;
-    font-size: 18px;
+    font-size: 38px;  /* ← размер как в календаре */
     color: #bbb49e;
     letter-spacing: 6px;
+    opacity: 0.6;  /* ← прозрачность как в календаре */
+    font-family: 'Arial', 'Helvetica Neue', 'Segoe UI', sans-serif !important;
+    font-weight: normal !important;
 }
 
 /* === МЕСТО ПРОВЕДЕНИЯ === */
@@ -730,66 +743,4 @@ body {
     .countdown-unit {
         font-size: 9px;
     }
-}
-/* === УНИВЕРСАЛЬНОЕ ЗОЛОТОЕ СЕРДЕЧКО === */
-.golden-heart {
-    display: inline-block;
-    position: relative;
-    color: #bbb49e;
-    font-size: 18px;
-    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
-    line-height: 1;
-}
-
-/* === SVG-СЕРДЕЧКО ДЛЯ ВСЕХ МЕСТ === */
-
-/* Разделители между блоками */
-.heart-divider {
-    text-align: center;
-    margin: 25px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-}
-
-.heart-divider::before {
-    content: "";
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4b87a" opacity="0.35"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
-    background-size: contain;
-}
-
-/* Сердечко между именами */
-.couple-names .and {
-    display: inline-block;
-    width: 46px;
-    height: 46px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4b87a"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
-    background-size: contain;
-    margin: 10px auto;
-}
-
-/* ДЕНЬ СВАДЬБЫ — сердечко в календаре */
-.calendar-day.wedding-day {
-    color: #d4b87a;
-    font-weight: 700;
-    position: relative;
-    z-index: 1;
-}
-
-.calendar-day.wedding-day::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4b87a" opacity="0.35"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
-    background-size: contain;
-    z-index: -1;
-    pointer-events: none;
 }
