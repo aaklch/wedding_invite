@@ -150,7 +150,6 @@ function showInvitation(guest) {
             
             <div class="timing-section">
                 <div class="timing-label">ПЛАН ДНЯ</div>
-                <div class="timing-title">Timing</div>
                 
                 <div class="timing-item">
                     <div class="timing-time">13:00</div>
