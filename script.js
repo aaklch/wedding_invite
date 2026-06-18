@@ -182,6 +182,7 @@ function showInvitation(guest) {
                     <div><div class="color-dot color-2"></div><div class="color-label"></div></div>
                     <div><div class="color-dot color-1"></div><div class="color-label"></div></div>
                     <div><div class="color-dot color-5"></div><div class="color-label"></div></div>
+                    <div><div class="color-dot color-9"></div><div class="color-label"></div></div>
                     <div><div class="color-dot color-4"></div><div class="color-label"></div></div>
                     <div><div class="color-dot color-3"></div><div class="color-label"></div></div>
                 </div>
