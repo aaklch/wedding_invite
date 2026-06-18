@@ -68,6 +68,16 @@
       "id": "login",
       "name": "Семья Логинов",
       "fullName": "Папа и мама"
+    },
+     {
+      "id": "suslik",
+      "name": "Суслик",
+      "fullName": "Суслик"
+    },
+     {
+      "id": "matvey",
+      "name": "Матввей",
+      "fullName": "Матвей"
     }
 
 ]
