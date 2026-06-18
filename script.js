@@ -163,11 +163,6 @@ function showInvitation(guest) {
                 </div>
                 
                 <div class="timing-item">
-                    <div class="timing-time">16:30</div>
-                    <div class="timing-event">Торжественная церемония</div>
-                </div>
-                
-                <div class="timing-item">
                     <div class="timing-time">17:00</div>
                     <div class="timing-event">Праздничный банкет</div>
                 </div>
@@ -197,12 +192,10 @@ function showInvitation(guest) {
             <div class="details-section">
                 <div class="details-label">ДЕТАЛИ</div>
                 <div class="details-text">
-                    Просим не обременять себя<br>
-                    выбором цветов. Ваше присутствие<br>
-                    скрасит этот день ярче любых букетов!<br><br>
-                    Если вы хотите порадовать нас,<br>
-                    лучшим подарком станет
-                    бутылочка вашего любимого вина
+                    Вместо цветов вы можете<br>
+                    принести нам бутылочку алкогольного напитка<br>
+                    и, не забудьте, указать на ней<br>
+                    повод, по которму нам стоит её открыть!<br>
                 </div>
             </div>
             
