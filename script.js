@@ -10,6 +10,7 @@ async function loadGuests() {
         const response = await fetch('guests.json');
         const data = await response.json();
         guestsData = data.guests;
+        console.log('Всего гостей загружено:', guestsData.length);
         return true;
     } catch (error) {
         console.error('Ошибка:', error);
@@ -113,7 +114,7 @@ function startCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
-// Функция для определения обращения
+// Функция для определения обращения (универсальная)
 function getGreeting(guest) {
     const name = guest.fullName || guest.name || '';
     
@@ -126,27 +127,31 @@ function getGreeting(guest) {
         return `Дорогие ${name}!`;
     }
     
-    // Список женских имён
+    // Список женских имён (полный)
     const femaleNames = [
         'Светлана', 'Ангелина', 'Дарья', 'Анна', 'Клавдия', 'Оксана', 
         'Татьяна', 'Ирина', 'Мария', 'Екатерина', 'Александра', 'Виктория',
         'Анастасия', 'Валерия', 'София', 'Ксения', 'Аглая', 'Галя',
         'Лена', 'Валя', 'Оля', 'Юля', 'Надя', 'Тётя', 'Бабушка',
-        'Саша', 'Лера'
+        'Саша', 'Лера', 'Юрасик'
     ];
     
+    // Проверяем, есть ли имя в списке женских
     const isFemale = femaleNames.some(f => name.includes(f));
     if (isFemale) return `Дорогая ${name}!`;
     
+    // Список мужских имён
     const maleNames = [
         'Алексей', 'Владимир', 'Сергей', 'Артём', 'Александр', 
         'Никита', 'Матвей', 'Владислав', 'Иван', 'Георгий',
         'Тимофей', 'Евгений', 'Олег', 'Вадим', 'Дядя',
         'Ваня', 'Юрасик'
     ];
+    
     const isMale = maleNames.some(m => name.includes(m));
     if (isMale) return `Дорогой ${name}!`;
     
+    // Если не определили — используем "Дорогие"
     return `Дорогие ${name}!`;
 }
 
@@ -234,7 +239,7 @@ function showInvitation(guest) {
                     Вместо цветов вы можете<br>
                     принести нам бутылочку алкогольного напитка<br>
                     и, пожалуйста, не забудьте указать на ней<br>
-                    повод, по которому нам стоит её открыть! 🥂
+                    повод, по которому нам стоит её открыть! 
                 </div>
             </div>
             
@@ -329,7 +334,7 @@ function initScrollEffect() {
 async function init() {
     const loaded = await loadGuests();
     if (!loaded) {
-        document.getElementById('app').innerHTML = '<div style="padding:40px;text-align:center">Ошибка</div>';
+        document.getElementById('app').innerHTML = '<div style="padding:40px;text-align:center">Ошибка загрузки данных</div>';
         return;
     }
     
