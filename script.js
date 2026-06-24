@@ -113,15 +113,55 @@ function startCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
+// Функция для определения обращения
+function getGreeting(guest) {
+    const name = guest.fullName || guest.name;
+    
+    // Проверяем, есть ли запятая или "и" в имени (несколько имён)
+    if (name.includes(',') || name.includes(' и ') || name.includes('&')) {
+        return `Дорогие ${name}!`;
+    }
+    
+    // Список женских имён
+    const femaleNames = [
+        'Светлана', 'Ангелина', 'Дарья', 'Анна', 'Клавдия', 'Оксана', 
+        'Татьяна', 'Ирина', 'Мария', 'Екатерина', 'Александра', 'Виктория',
+        'Анастасия', 'Валерия', 'София', 'Ксения', 'Аглая', 'Галя',
+        'Лена', 'Валя', 'Оля', 'Тётя', 'Бабушка'
+    ];
+    
+    // Проверяем, есть ли имя в списке женских
+    const isFemale = femaleNames.some(f => name.includes(f));
+    
+    if (isFemale) {
+        return `Дорогая ${name}!`;
+    }
+    
+    // Список мужских имён (для уверенности)
+    const maleNames = ['Алексей', 'Владимир', 'Сергей', 'Артём', 'Александр', 
+                       'Никита', 'Матвей', 'Владислав', 'Иван', 'Георгий',
+                       'Тимофей', 'Евгений', 'Олег', 'Вадим'];
+    
+    const isMale = maleNames.some(m => name.includes(m));
+    
+    if (isMale) {
+        return `Дорогой ${name}!`;
+    }
+    
+    // Если не определили — "Дорогие" (безопасный вариант)
+    return `Дорогие ${name}!`;
+}
+
 function showInvitation(guest) {
     const app = document.getElementById('app');
     const savedRSVP = getRSVP(guest.id);
     const calendarHtml = generateCalendar();
+    const greeting = getGreeting(guest);
 
     app.innerHTML = `
         <div class="invitation-card">
             <div class="invitation-text">
-                <h2>${guest.fullName1}!</h2>
+                <h2>${greeting}</h2>
                 <p>Этот день станет для нас поистине незабываемым, и мы мечтаем провести его рядом с Вами.</p>
                 <p style="margin-top: 15px;">Приглашаем Вас присоединиться к нашей свадьбе и украсить ее своим присутствием!</p>
             </div>
@@ -195,15 +235,15 @@ function showInvitation(guest) {
                 <div class="details-text">
                     Вместо цветов вы можете<br>
                     принести нам бутылочку алкогольного напитка<br>
-                    и, не забудьте, указать на ней<br>
-                    повод, по которму нам стоит её открыть!<br>
+                    и, пожалуйста, не забудьте указать на ней<br>
+                    повод, по которому нам стоит её открыть! 🥂
                 </div>
             </div>
             
             <div class="heart-divider"></div>
             
             <div class="rsvp-section">
-                <h3>Подтвердите присутствие ${guest.fullName}</h3>
+                <h3>Подтвердите присутствие, ${guest.name}</h3>
                 <div class="rsvp-buttons">
                     <button class="btn btn-yes" onclick="handleRSVP('yes', '${guest.id}')">Буду с удовольствием</button>
                     <button class="btn btn-no" onclick="handleRSVP('no', '${guest.id}')">Не смогу</button>
@@ -258,7 +298,7 @@ window.handleRSVP = function(response, guestId) {
     
     const guest = findGuest(guestId);
     if (guest) {
-        sendToGoogleSheets(guest.fullName, guestId, response);
+        sendToGoogleSheets(guest.fullName || guest.name, guestId, response);
     }
     
     const msg = document.getElementById('rsvpMessage');
