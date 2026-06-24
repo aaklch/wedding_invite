@@ -82,13 +82,57 @@
      {
       "id": "babushkagalya",
       "name": "Бабушка Галя",
-      "fullName": "Дорогая Бабушка Галя!",
-       "fullName1": "Дорогая Бабушка Галя!"
+      "fullName": "Дорогая Бабушка Галя!"
     },
     {
-      "id": "",
-      "name": "Бабушка Галя",
-      "fullName": "Бабушка Галя"
+      "id": "tetyalena",
+      "name": "Тётя Лена",
+      "fullName": "Тётя Лена"
+    },
+    {
+      "id": "tetyatanya",
+      "name": "Тётя Таня",
+      "fullName": "Тётя Таня"
+    },
+    {
+      "id": "tetyavalya",
+      "name": "Тётя Валя",
+      "fullName": "Тётя Валя"
+    },
+    {
+      "id": "ekaterina",
+      "name": "Екатерина",
+      "fullName": "Екатерина"
+    },
+    {
+      "id": "aleksandra",
+      "name": "Александра",
+      "fullName": "Александра"
+    },
+    {
+      "id": "vadimolya",
+      "name": "Дядя Вадим и Тётя Оля",
+      "fullName": "Дядя Вадим и Тётя Оля"
+    },
+    {
+      "id": "galyaoleg",
+      "name": "Дядя Олег и Тётя Галя",
+      "fullName": "Дядя Олег и Тётя Галя"
+    },
+    {
+      "id": "viktoria",
+      "name": "Виктория",
+      "fullName": "Виктория"
+    },
+    {
+      "id": "anastasia",
+      "name": "Анастасия",
+      "fullName": "Анастасия"
+    },
+    {
+      "id": "vladislav",
+      "name": "Владислав",
+      "fullName": "Владислав"
     }
     
 
