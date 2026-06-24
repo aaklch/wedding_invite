@@ -115,7 +115,13 @@ function startCountdown() {
 
 // Функция для определения обращения
 function getGreeting(guest) {
-    const name = guest.fullName || guest.name;
+    // Используем fullName или name, если fullName нет
+    const name = guest.fullName || guest.name || '';
+    
+    // Если имя пустое — возвращаем "Дорогие гости!"
+    if (!name || name.trim() === '') {
+        return 'Дорогие гости!';
+    }
     
     // Проверяем, есть ли запятая или "и" в имени (несколько имён)
     if (name.includes(',') || name.includes(' и ') || name.includes('&')) {
@@ -127,7 +133,7 @@ function getGreeting(guest) {
         'Светлана', 'Ангелина', 'Дарья', 'Анна', 'Клавдия', 'Оксана', 
         'Татьяна', 'Ирина', 'Мария', 'Екатерина', 'Александра', 'Виктория',
         'Анастасия', 'Валерия', 'София', 'Ксения', 'Аглая', 'Галя',
-        'Лена', 'Валя', 'Оля', 'Тётя', 'Бабушка'
+        'Лена', 'Валя', 'Оля', 'Юля', 'Надя', 'Тётя'
     ];
     
     // Проверяем, есть ли имя в списке женских
@@ -137,10 +143,10 @@ function getGreeting(guest) {
         return `Дорогая ${name}!`;
     }
     
-    // Список мужских имён (для уверенности)
+    // Список мужских имён
     const maleNames = ['Алексей', 'Владимир', 'Сергей', 'Артём', 'Александр', 
                        'Никита', 'Матвей', 'Владислав', 'Иван', 'Георгий',
-                       'Тимофей', 'Евгений', 'Олег', 'Вадим'];
+                       'Тимофей', 'Евгений', 'Олег', 'Вадим', 'Дядя'];
     
     const isMale = maleNames.some(m => name.includes(m));
     
@@ -298,7 +304,7 @@ window.handleRSVP = function(response, guestId) {
     
     const guest = findGuest(guestId);
     if (guest) {
-        sendToGoogleSheets(guest.fullName || guest.name, guestId, response);
+        sendToGoogleSheets(guest.fullName || guest.name || guestId, guestId, response);
     }
     
     const msg = document.getElementById('rsvpMessage');
