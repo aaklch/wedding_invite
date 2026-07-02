@@ -31,6 +31,13 @@
     { "id": "alexandraa", "name": "Саша", "fullName": "Саша" },
     { "id": "vanya", "name": "Ваня", "fullName": "Ваня" },
     { "id": "yura", "name": "Юрасик", "fullName": "Юрасик" },
-    { "id": "valeria", "name": "Лера", "fullName": "Лера" }
+    { "id": "valeria", "name": "Лера", "fullName": "Лера" },
+    { "id": "maximtanya", "name": "Максим и Таня", "fullName": "Максим и Таня" },
+    { "id": "alexandr", "name": "Александр", "fullName": "Александр" },
+    { "id": "zakhar", "name": "Захар", "fullName": "Захар" },
+    { "id": "daniil", "name": "Даниил", "fullName": "Даниил" },
+    { "id": "danik", "name": "Даниил", "fullName": "Даниил" },
+    { "id": "maxim", "name": "Максим", "fullName": "Максим" },
+    { "id": "alexey", "name": "Алексей", "fullName": "Алексей" }
   ]
 }
